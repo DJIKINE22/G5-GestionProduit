@@ -55,7 +55,7 @@ public class ProduitServlet extends HttpServlet {
                     showNewForm(request, response);
                     break;
                 case "/insert":
-                    insertProduit(request, response);
+                    ValeurProduit(request, response);
                     break;
                 case "/delete":
                     deleteEtudiant(request, response);
@@ -104,7 +104,7 @@ public class ProduitServlet extends HttpServlet {
 
 
 
-    private void insertProduit(HttpServletRequest request, HttpServletResponse response)
+    private void ValeurProduit(HttpServletRequest request, HttpServletResponse response)
     throws SQLException, IOException {
     	
         String nom = request.getParameter("nom");

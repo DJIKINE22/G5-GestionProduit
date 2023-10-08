@@ -11,10 +11,12 @@ import java.util.List;
 
 
 public class ProduitDAO {
-
+		//Definition des variables
 	private static String jdbcurl="jdbc:mysql://localhost:3306/g5productstock?useSSL=false&useGmtMillisForDatetimes=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&useTimezone=true&serverTimezone=UTC";
 	private static String user="root";
 	private static String password="";
+	
+	// requete sql
 	
 	private static  String sql_insert = "INSERT INTO produits (nom, caracteristique, prix, quantite) VALUES (?, ?, ?, ?)";
 										
@@ -45,7 +47,7 @@ public class ProduitDAO {
     //INSERT ETUDIANT
     public void insertProduit(Produit p) throws SQLException {
         System.out.println(sql_insert);
-        // try-with-resource statement will auto close the connection.
+        // recuperation des data
         try (Connection connection = getConnection(); PreparedStatement preparedStatement = connection.prepareStatement(sql_insert)) {
             preparedStatement.setString(1, p.getNom());
             preparedStatement.setString(2, p.getCaracteristique());

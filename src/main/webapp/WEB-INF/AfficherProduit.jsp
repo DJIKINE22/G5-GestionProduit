@@ -16,21 +16,21 @@
 <body>
 <div class="container">
 
-<h1 class="header bg-dark">Liste des Produits</h1>
+<h1 class="header bg-primary text-center ">Liste des Produits</h1>
 
 
-	<table class="table table">
-	    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+	<table id="example" class="table table-bordered table-hover">
+	    <button type="button" class="btn btn-primary my-3" data-toggle="modal" data-target="#staticBackdrop">
   			<i class="fa fa-plus" style="color:white"> </i>	NOUVEAU PRODUIT
 		</button> 
-		<thead>
+		<thead class="thead-dark">
 			<tr>
-				<th>IDENTIFIANT</th>
-				<th>NOM</th>
-				<th>CARACTERISTIQUE</th>
-				<th>PRIX</th>
-				<th>QUANTITE</th>
-				<th col-span="3">ACTION</th>
+				<th class="text-center" scope="col">IDENTIFIANT</th>
+				<th class="text-center" scope="col">NOM</th>
+				<th class="text-center" scope="col">CARACTERISTIQUE</th>
+				<th class="text-center" scope="col">PRIX</th>
+				<th class="text-center" scope="col">QUANTITE</th>
+				<th class="text-center"  colspan="4">ACTION</th>
 			</tr>
 		</thead>
 		<%
@@ -41,25 +41,27 @@
 %>
 		<tbody>
 			<tr>
-			<td><%= p.getId() %></td>
-			<td><%= p.getNom() %></td>
-			<td> <%= p.getCaracteristique() %></td>
-			<td><%= p.getPrix() %></td>
-			<td><%= p.getQuantite() %></td>
-			<td><button type="button" class="btn btn-primary" >
-				<a href="delete?id=<%= p.getId() %>"> </a>
-     			 <i class="fa fa-trash " aria-hidden="true" style="color:red"></i>
-     			 </button>
-     			 <a href="delete?id=<%= p.getId() %>">Suprimer</a>
-     			 	 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal<%= p.getId() %>">
-      			 <i class="fa fa-edit" style="color:#14BDC5 "> </i> 
-    			</button>
-     			 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#detail<%= p.getId() %>">
-      			 <i class="fa fa-info-circle" style="color:#14BDC5 "> </i> 
-    			</button>
-    			
-    		</td>
-			</tr>
+				<td class="text-center"><%= p.getId() %></td>
+				<td class="text-center"><%= p.getNom() %></td>
+				<td class="text-center"> <%= p.getCaracteristique() %></td>
+				<td class="text-center"><%= p.getPrix() %></td>
+				<td class="text-center"><%= p.getQuantite() %></td>
+				<td class="text-center">
+				<!-- Bouton de suppression avec confirmation -->
+	                <form action="delete" method="post" style="display: inline;">
+	                     <input type="hidden" name="id" value="<%= p.getId() %>">
+	                      <button type="button" class="btn btn-danger" onclick="confirmerSuppression(<%= p.getId() %>)">
+	                       <i class="fa fa-trash" style="color:#14BDC5 "> </i>
+	                       </button>
+	                   </form>
+	     			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal<%= p.getId() %>">
+	      			 <i class="fa fa-edit" style="color:#14BDC5 "> </i> 
+	    			</button>
+	     			 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#detail<%= p.getId() %>">
+	      			 <i class="fa fa-info-circle" style="color:#14BDC5 "> </i> 
+	    			</button>
+	    		</td>
+		</tr>
 			
 			<!-- Modal  modification-->
     <div class="modal fade" id="myModal<%= p.getId() %>" role="dialog">
@@ -67,8 +69,8 @@
         <!-- Contenu de la modal -->
         <div class="modal-content">
           <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">Détails de <%= p.getNom() %></h4>
+            <button type="button" class="close bg-primary m-2" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Modifier le Produit <%= p.getNom() %></h4>
           </div>
           <div class="modal-body">
             <!-- Affiche les détails de la personne dans la modal -->
@@ -97,9 +99,9 @@
             	</div>
             </form>
           </div>
-          <!-- <div class="modal-footer">
+          <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-          </div> -->
+          </div>
         </div>
       </div>
     </div>
@@ -134,20 +136,17 @@
             %>
 		</tbody>
 		
+		
+		
 	</table>
-    <!-- Affiche les informations dans la page -->
-    
-    
-    <!-- Ajoute un bouton ou un lien pour ouvrir la modal avec les informations -->
    
-    
-                <!-- Modal -->
+                <!-- Modal AJOUT -->
 <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Ajout Produit</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <h5 class="modal-title bg-primary" id="staticBackdropLabel ">Ajout Produit</h5>
+        <button type="button" class="close bg-danger" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -155,21 +154,12 @@
       <div class="container ">
                 <div class="card">
                     <div class="card-body">
-                        
-
-                            <form action="insert" method="post">
-                        
-
+                         <form action="insert" method="post">
                         <caption>
                             <h2>
-                                
-                                    Ajout Etudiant
-                                
+                              Ajout Etudiant
                             </h2>
                         </caption>
-
-                        
-
                         <fieldset class="form-group">
                             <label>Nom</label> <input type="text"  class="form-control" name="nom" required="required">
                         </fieldset>
@@ -199,6 +189,7 @@
       </div>
     </div>
   </div>
+  
 </div>
     
 
@@ -208,6 +199,18 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<script>
+        function confirmerSuppression(id) {
+            if (confirm("Êtes-vous sûr de vouloir supprimer ce produit ?")) {
+                // Si l'utilisateur confirme, soumet le formulaire de suppression
+                document.querySelector('form[action="delete"] input[name="id"]').value = id;
+                document.querySelector('form[action="delete"]').submit();
+            }
+        }
+        
+    </script>
+    
 
 <!-- ... -->
 
