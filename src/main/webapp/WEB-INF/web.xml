@@ -2,13 +2,13 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" version="5.0">
   <servlet>
     <description></description>
-    <display-name>ProduitSevlet</display-name>
-    <servlet-name>ProduitSevlet</servlet-name>
-    <servlet-class>com.G5GestionProduit.application.ProduitSevlet</servlet-class>
+    <display-name>ProduitServlet</display-name>
+    <servlet-name>ProduitServlet</servlet-name>
+    <servlet-class>com.G5GestionProduit.application.ProduitServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>ProduitSevlet</servlet-name>
-    <url-pattern>/ProduitSevlet</url-pattern>
+    <servlet-name>ProduitServlet</servlet-name>
+    <url-pattern>/</url-pattern>
   </servlet-mapping>
   <display-name>G5-GestionProduit</display-name>
   <welcome-file-list>
