@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div class="container my-4">
+	<div class="container mt-4">
 	
 		<section class="vh-100">
   <div class="container-fluid h-custom">
@@ -24,7 +24,7 @@
           <!-- Email input -->
           <div class="form-outline mb-4">
             <input type="text" id="form3Example3" name="username" class="form-control form-control-lg"
-              placeholder="Enter a valid email address" />
+              placeholder="Enter votre username " />
             <label class="form-label" for="form3Example3">Username</label>
           </div>
 
@@ -46,11 +46,10 @@
             <a href="#!" class="text-body">Forgot password?</a>
           </div>
 
-          <div class="text-center text-lg-start mt-4 pt-2">
+          <div class="text-center text-lg-start mt-4 pt-2 my-4">
             <button type="submit" class="btn btn-primary btn-lg"
               style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
-            <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="#!"
-                class="link-danger">Register</a></p>
+            
           </div>
 
         </form>
@@ -61,7 +60,7 @@
     class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
     <!-- Copyright -->
     <div class="text-white mb-3 mb-md-0">
-      Copyright © 2020. All rights reserved.
+      Copyright © G5 2023. All rights reserved.
     </div>
     <!-- Copyright -->
 

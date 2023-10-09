@@ -15,55 +15,12 @@
 </head>
 <body>
 <div class="container">
-
-<nav class="navbar navbar-expand-lg navbar-light bg-primary">
-  <a class="navbar-brand   text-white" href="#">G5-GESTION PRODUIT</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto ">
-      <li class="nav-item active">
-        <a class="nav-link" href="#"> <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#"></a>
-      </li>
-    
-      <li class="nav-item me-5">
-        <a class="nav-link text-white " href="#">Gerer les utilisateurs</a>
-        
-      </li >
-      <li class="nav-item me-5">
-        <a class="nav-link  text-white" href="">Produits</a>
-        
-      </li >
-      <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-     </ul>
-  </div>
-  <ul class="navbar-nav mr-auto ">
-      <li class="nav-item">
-      <a class="btn nav-link list-inline color-white  btn-outline-danger" style="float: right; color:white; style:none;"href="/G5-GestionProduit/Auth">SE Deconnecter</a>
-      </li>
-   </ul>
-    
-</nav>
 	
-	
-
-
-
-
+	<h1 class="text-center bg-primary">Liste des Produis</h1>
 
 	<table id="example" class="table table-bordered table-hover">
-	    <button type="button" class="btn btn-primary my-3" data-toggle="modal" data-target="#staticBackdrop">
-  			<i class="fa fa-plus" style="color:white"> </i>	NOUVEAU PRODUIT
-		</button> 
-		
+	    
+		<a class=" btn color-white bg-primary my-4" style="float: right; color:white;"href="/G5-GestionProduit/Auth">SE Deconnecter</a>
 		<thead class="thead-dark">
 			<tr>
 				<th class="text-center" scope="col">IDENTIFIANT</th>
@@ -88,16 +45,8 @@
 				<td class="text-center"><%= p.getPrix() %></td>
 				<td class="text-center"><%= p.getQuantite() %></td>
 				<td class="text-center">
-				<!-- Bouton de suppression avec confirmation -->
-	                <form action="delete" method="post" style="display: inline;">
-	                     <input type="hidden" name="id" value="<%= p.getId() %>">
-	                      <button type="button" class="btn btn-danger" onclick="confirmerSuppression(<%= p.getId() %>)">
-	                       <i class="fa fa-trash" style="color:#14BDC5 "> </i>
-	                       </button>
-	                   </form>
-	     			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal<%= p.getId() %>">
-	      			 <i class="fa fa-edit" style="color:#14BDC5 "> </i> 
-	    			</button>
+				
+	     		
 	     			 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#detail<%= p.getId() %>">
 	      			 <i class="fa fa-info-circle" style="color:#14BDC5 "> </i> 
 	    			</button>
@@ -186,7 +135,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title bg-primary" id="staticBackdropLabel ">Ajout Produit</h5>
+        
         <button type="button" class="close bg-danger" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

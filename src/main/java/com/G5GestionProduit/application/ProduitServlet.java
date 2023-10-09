@@ -82,7 +82,7 @@ public class ProduitServlet extends HttpServlet {
         request.setAttribute("listProduit", listProduit);
         
         
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/AfficherProduit.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/TableauManager.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -95,14 +95,11 @@ public class ProduitServlet extends HttpServlet {
     private void showEditForm(HttpServletRequest request, HttpServletResponse response)
     throws SQLException, ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));		 
-        Produit existingUser = produitDAO.selectProduit(id);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/produitEdit.jsp");
-        request.setAttribute("produit", existingUser);
-        dispatcher.forward(request, response);
+        Produit existingProduit = produitDAO.selectProduit(id);
+        request.setAttribute("produit", existingProduit);
+       
 
     }
-
-
 
     private void ValeurProduit(HttpServletRequest request, HttpServletResponse response)
     throws SQLException, IOException {
