@@ -18,7 +18,7 @@
           class="img-fluid" alt="Sample image">
       </div>
       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-        <form action = "login" method= "post" >
+        <form action = "AuthentificationServlet" method= "post" >
          
 
           <!-- Email input -->

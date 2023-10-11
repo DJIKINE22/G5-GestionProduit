@@ -58,7 +58,7 @@ public class ProduitServlet extends HttpServlet {
                     ValeurProduit(request, response);
                     break;
                 case "/delete":
-                    deleteEtudiant(request, response);
+                    deleteProduit(request, response);
                     break;
 				
 				  case "/modif": showEditForm(request, response); break;
@@ -126,7 +126,7 @@ public class ProduitServlet extends HttpServlet {
         response.sendRedirect("list");
     }
 
-    private void deleteEtudiant(HttpServletRequest request, HttpServletResponse response)
+    private void deleteProduit(HttpServletRequest request, HttpServletResponse response)
     throws SQLException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         produitDAO.deleteProduits(id);

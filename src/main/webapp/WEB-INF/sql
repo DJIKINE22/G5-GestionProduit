@@ -1,0 +1,8 @@
+CREATE TABLE `manager` (
+  `MANA_ID` varchar(20) NOT NULL,
+  `nom` varchar(20) NOT NULL,
+  `prenom` varchar(20) NOT NULL,
+  `Adresse` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `PASSWORD` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
